@@ -1,0 +1,44 @@
+{
+  "name": "integr8",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "build": "npm i"
+  },
+  "keywords": [
+    "blockchain",
+    "integr8",
+    "cryptocurrency",
+    "cryptocurrencies",
+    "wallet",
+    "coin",
+    "token",
+    "nft",
+    "coins",
+    "tokens",
+    "nfts",
+    "assets"
+  ],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bip39": "^3.1.0",
+    "compression": "^1.8.1",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.5.0",
+    "elliptic": "^6.6.1",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.2.1",
+    "helmet": "^8.1.0",
+    "hex-to-binary": "^1.0.1",
+    "mongoose": "^8.14.0",
+    "uuid": "^11.1.0",
+    "winston": "^3.18.3",
+    "ws": "^8.18.1"
+  }
+}

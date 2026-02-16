@@ -1,0 +1,16 @@
+const EC=require('elliptic').ec;
+const crypto=require('crypto');
+const fs=require('fs');
+const ec=new EC('secp256k1');
+const senderPriv=fs.readFileSync('/tmp/w1_priv','utf8').trim();
+const senderPub=fs.readFileSync('/tmp/w1_pub','utf8').trim();
+const recipient=fs.readFileSync('/tmp/w2_pub','utf8').trim();
+const amount=1;
+const type='coin';
+const action='transfer';
+const data={wallet: senderPub, recipient, amount, type, action};
+const cryptoHash=(...inputs)=>{const hash=crypto.createHash('sha256');hash.update(inputs.map(input=>JSON.stringify(input)).sort().join(' '));return hash.digest('hex')};
+const msgHash=cryptoHash(data);
+const key=ec.keyFromPrivate(senderPriv);
+const signature=key.sign(msgHash,'base64').toDER('hex');
+console.log(signature);
